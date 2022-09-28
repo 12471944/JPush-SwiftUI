@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-let appKey = "3d32a6b72a3b436962891e2d"
+let appKey = "3dc2a6b72a3b4369b2891e2d"
 let channel = "demo"
 let isProduction = false
 
@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             NSInteger(UNAuthorizationOptions.sound.rawValue) |
             NSInteger(UNAuthorizationOptions.badge.rawValue)
             JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+        
             
         } else if #available(iOS 8, *) {
             // 可以自定义 categories
@@ -89,7 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
                 UIRemoteNotificationType.alert.rawValue,
                 categories: nil)
         }
-        
         JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
         return true
     }
