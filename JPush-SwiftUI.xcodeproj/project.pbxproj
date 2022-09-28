@@ -516,7 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JPush-SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = N5Q4S7Y8B7;
+				DEVELOPMENT_TEAM = 2434B4Y79G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "JPush-SwiftUI/Info.plist";
@@ -536,7 +536,7 @@
 					"$(PROJECT_DIR)/JPush-SwiftUI/Lib",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mee.eap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mee.edagp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JPush-SwiftUI/AppDelegate-Bridging-Header.h";
@@ -554,7 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JPush-SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = N5Q4S7Y8B7;
+				DEVELOPMENT_TEAM = 2434B4Y79G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "JPush-SwiftUI/Info.plist";
@@ -574,7 +574,7 @@
 					"$(PROJECT_DIR)/JPush-SwiftUI/Lib",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mee.eap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mee.edagp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JPush-SwiftUI/AppDelegate-Bridging-Header.h";

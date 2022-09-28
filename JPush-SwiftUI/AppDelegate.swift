@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-let appKey = "3dc2a6b72a3b4369b2891e2d"
+let appKey = "3d32a6b72a3b436962891e2d"
 let channel = "demo"
 let isProduction = false
 
