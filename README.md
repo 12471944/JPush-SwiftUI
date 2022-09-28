@@ -2,6 +2,9 @@
 
 手动导入极光推送，swiftui版本
 
+IOS版本： 14.0
+Swift版本： 5
+
 官方文档：https://docs.jiguang.cn/jpush/client/iOS/ios_guide_new#_10
 
 上面缺细节，可以参考这个Demo
