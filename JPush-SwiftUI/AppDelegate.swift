@@ -22,39 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
     }
     
-    func jpushNotificationAuthorization(_ status: JPAuthorizationStatus, withInfo info: [AnyHashable : Any]!) {
-        
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //    let entity = JPUSHRegisterEntity()
-        if #available(iOS 10, *) {
-            let entity = JPUSHRegisterEntity()
-            entity.types = NSInteger(UNAuthorizationOptions.alert.rawValue) |
-            NSInteger(UNAuthorizationOptions.sound.rawValue) |
-            NSInteger(UNAuthorizationOptions.badge.rawValue)
-            JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
-            
-        } else if #available(iOS 8, *) {
-            // 可以自定义 categories
-            JPUSHService.register(
-                forRemoteNotificationTypes: UIUserNotificationType.badge.rawValue |
-                UIUserNotificationType.sound.rawValue |
-                UIUserNotificationType.alert.rawValue,
-                categories: nil)
-        } else {
-            // ios 8 以前 categories 必须为nil
-            JPUSHService.register(
-                forRemoteNotificationTypes: UIRemoteNotificationType.badge.rawValue |
-                UIRemoteNotificationType.sound.rawValue |
-                UIRemoteNotificationType.alert.rawValue,
-                categories: nil)
-        }
-        
-        JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
-        return true
-    }
-    
     @available(iOS 10.0, *)
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
         
@@ -94,6 +61,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         completionHandler(Int(UNNotificationPresentationOptions.alert.rawValue)) // 需要执行这个方法，选择是否提醒用户，有 Badge、Sound、Alert 三种类型可以选择设置
     }
     
+    func jpushNotificationAuthorization(_ status: JPAuthorizationStatus, withInfo info: [AnyHashable : Any]!) {
+        
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //    let entity = JPUSHRegisterEntity()
+        if #available(iOS 10, *) {
+            let entity = JPUSHRegisterEntity()
+            entity.types = NSInteger(UNAuthorizationOptions.alert.rawValue) |
+            NSInteger(UNAuthorizationOptions.sound.rawValue) |
+            NSInteger(UNAuthorizationOptions.badge.rawValue)
+            JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+            
+        } else if #available(iOS 8, *) {
+            // 可以自定义 categories
+            JPUSHService.register(
+                forRemoteNotificationTypes: UIUserNotificationType.badge.rawValue |
+                UIUserNotificationType.sound.rawValue |
+                UIUserNotificationType.alert.rawValue,
+                categories: nil)
+        } else {
+            // ios 8 以前 categories 必须为nil
+            JPUSHService.register(
+                forRemoteNotificationTypes: UIRemoteNotificationType.badge.rawValue |
+                UIRemoteNotificationType.sound.rawValue |
+                UIRemoteNotificationType.alert.rawValue,
+                categories: nil)
+        }
+        
+        JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         
     }
@@ -127,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         JPUSHService.handleRemoteNotification(userInfo)
-        print("受到通知", userInfo)
+        print("收到通知", userInfo)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "AddNotificationCount"), object: nil)  //把  要addnotificationcount
     }
     

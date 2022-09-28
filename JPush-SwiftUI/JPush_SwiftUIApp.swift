@@ -14,6 +14,16 @@ struct JPush_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                    print("Moving to the background!")
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                    //重置脚标
+                    UIApplication.shared.applicationIconBadgeNumber = 0 //本地
+                    UIApplication.shared.cancelAllLocalNotifications()
+                    JPUSHService.resetBadge() //极光
+                    print("Moving back to the foreground!")
+                }
         }
     }
 }
