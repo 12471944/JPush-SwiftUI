@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-let appKey = "3d22a6b72a3b3r69b2891f2d"
+let appKey = "appKey"
 let channel = "demo"
 let isProduction = false
 
@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print(3333333)
         //    let entity = JPUSHRegisterEntity()
         if #available(iOS 10, *) {
             let entity = JPUSHRegisterEntity()
